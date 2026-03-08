@@ -1,127 +1,134 @@
 # AIpods Platform — Complete Reference Document
-**Version:** March 2026 (Thread vFinal)  
-**Purpose:** Single source of truth for Cursor, the autonomous agents, and all future development.
+**Version:** March 2026 (Full Thread Synthesis – Final)  
+**Purpose:** This is the SINGLE SOURCE OF TRUTH for Cursor, the 7 autonomous agents, and every future prompt, feature, or decision. Every agent and every line of code must align 100% with this document.
 
 ## 1. Vision & Mission
-AIpods is a B2B SaaS platform that delivers **fully autonomous AI agent teams** ("pods") that function as complete departments for companies.
+AIpods is a B2B SaaS platform that delivers **fully autonomous AI agent teams** ("pods") that function as complete, self-running departments for companies.
 
-Each pod is:
-- Modular and scalable (start with a Mini Pod → add unlimited modules)
-- Powered by a **shared Company Knowledge Center** that grows forever
-- Model-agnostic (never locked to one LLM provider)
-- Built to replace or augment expensive human teams at 1/10th the cost
+The goal is to give any company (SMB to mid-market) an entire AI department that:
+- Works 24/7
+- Never forgets anything about the business
+- Continuously improves
+- Delivers measurable ROI from day 1
+- Costs 1/10th–1/20th of human teams
 
-**Core promise to customers:**  
-"Upload your documents once. Get an entire AI department that never forgets, never sleeps, and keeps getting smarter — with zero data leakage and full privacy."
+**Core promise:**  
+"Upload your documents once. Get an entire AI department that knows your brand, your past results, your voice, and your goals better than any human team ever could — with zero data leakage and full privacy."
 
-We only serve **business use cases** (marketing, sales, ops, creative, research, finance ops, etc.). Personal, coaching, education, legal, medical, or any regulated pods are strictly forbidden.
+We are building a company that is **almost totally autonomous** (runs with only 7 AI agents + minimal human oversight from the founder).
 
-## 2. Core Architecture
-- **Pods** = multi-agent teams (3–15 specialized agents orchestrated with LangGraph)
-- **Company Knowledge Center** = the 10-year moat  
-  - Per-client encrypted vector store (Supabase + pgvector)
-  - Client-side encryption (Web Crypto API) — key never leaves browser
-  - All pods of the same client share the same knowledge base automatically
-  - Pods write every lesson/outcome back to the center (no siloed knowledge)
-- **Dynamic Model Router** — always picks the best/cheapest model (Claude, Grok, Gemini, etc.)
-- **Anonymized Pattern Store** — only aggregated, anonymized learnings (e.g. "DTC brands $2M–$20M ARR: free-shipping hooks convert 2.8× better")
-- **Autonomous Company Layer** — runs 24/7 with exactly 7 agents (see section 7)
+## 2. Core Product: AI Pods
+- Each pod = a team of specialized AI agents (3–15 agents) orchestrated with LangGraph.
+- Pods are **modular and scalable**:
+  - Start with a **Mini Pod** (3–5 agents, low price)
+  - Add unlimited modules with one click (Social Ads, Motion, Presentations, Branding, AEC Signals, Funding Signals, etc.)
+  - Upgrade/downgrade instantly and prorated
+- **Addictive upgrades**: Every module addition shows instant ROI preview, projected extra pipeline/revenue, and gives +25% bonus Task Units for the first month.
+- Pods are **business-only** (sales, marketing, ops, creative, research, finance ops, recruiting, etc.). Strictly forbidden: personal coaching, education, legal, medical, or any regulated advice.
 
-## 3. Key Features
-- **Modularity & Addictive Upgrades**  
-  Every pod starts as Mini → one-click modules (Social Ads, Motion, Presentations, Branding, etc.)  
-  Upgrades feel addictive: instant ROI preview, monthly Growth Report, +25% Task Units bonus on upgrade.
+**Examples built so far in the thread:**
+- LeadResearch Pod (finds ICPs, validates emails, pulls fresh buying signals, outputs ready-to-import CSV)
+- CreativeForge Pod (full creative department replacing $3k–$13k/month human teams)
 
-- **Company Knowledge Center**  
-  Drag-and-drop once → every new pod instantly knows everything about the company.  
-  Score increases over time ("Team Intelligence Score").
+## 3. The Company Knowledge Center (The 10-Year Moat)
+This is the single most important feature and the primary defensibility.
 
-- **AI Task Units** (unified currency across all pods)  
-  1 unit ≈ value of 1 skilled human hour (delivered in minutes).
+- One central, encrypted knowledge base per client.
+- Client uploads documents once (pitch decks, brand guidelines, past campaigns, "what worked/what bombed", ICP notes, tone examples, etc.).
+- **Client-side encryption** (Web Crypto API) — the key never leaves the browser and is only known to that client's pods.
+- Every pod the client owns (old and new) automatically has full read/write access.
+- Pods write every lesson, outcome, success rate, and learning back to the center → knowledge compounds forever.
+- "Team Intelligence Score" visible in dashboard — increases every month.
+- When a client adds a new module or pod, it instantly knows everything — zero re-onboarding.
 
-- **Freemium**  
-  Free plan: 40 units/month (watermarked) — designed for high conversion, minimal cost.
+**Permanent Rule (enforced by AI CEO & Pod Factory Director):**  
+Every pod must write every lesson and outcome back to the shared Company Knowledge Center. Never let knowledge stay siloed.
 
-- **Dashboards** (Astro 5 + Vercel)
-  - Customer dashboard: My Pods, Knowledge Center, Usage, Billing, Growth Reports
-  - Internal admin dashboard (protected route /internal): metrics, escalation queue, CEO reports
+## 4. Privacy & Security (Non-Negotiable – Zero Tolerance)
+- **Client-side encryption** before any upload.
+- Per-client isolated Supabase schemas + Row Level Security (RLS).
+- AIpods company (founder or autonomous agents) has **zero access** to raw client data.
+- **Zero cross-client contamination**: No pod ever sees another client's raw data.
+- Only **fully anonymized, aggregated patterns** are ever shared globally (e.g. "DTC brands $2M–$20M ARR: free-shipping hooks convert 2.8× better").
+- Client has a toggle: "Allow anonymized pattern learning" (can turn off anytime).
+- Full immutable audit trail of every knowledge access.
+- Quarterly Transparency Reports auto-generated by the autonomous team.
 
-## 4. Business Model & Pricing (March 2026)
-**Subscription-only** (monthly, annual 20% discount)
+These guarantees are stronger than what frontier labs offer and will be a major marketing message.
 
-| Tier       | Price/mo | Task Units | Effective price/unit | Margin (70% utilization) |
-|------------|----------|------------|----------------------|--------------------------|
-| Starter    | $69      | 180        | $0.38                | 85%                      |
-| Growth     | $199     | 650        | $0.31                | 86%                      |
-| Scale      | $499     | 2,200      | $0.23                | 83%                      |
-| Enterprise | $1,499+  | 8,000+     | Negotiated           | 80–84%                   |
+## 5. Business Model & Pricing
+**Subscription-only** with AI Task Units (1 unit ≈ value of 1 skilled human hour).
 
-- 30% rollover of unused units
-- Overage $0.99/unit
-- +25% bonus units on any upgrade (first month)
-- Goal: 82–87% blended gross margin
+| Tier       | Monthly Price | Task Units | Rollover | Bonus on Upgrade | Target Margin |
+|------------|---------------|------------|----------|------------------|---------------|
+| Starter    | $69           | 180        | 30%      | +25% first month | 85%           |
+| Growth     | $199          | 650        | 30%      | +25% first month | 86%           |
+| Scale      | $499          | 2,200      | 30%      | +25% first month | 83%           |
+| Enterprise | $1,499+       | 8,000+     | Custom   | Custom           | 80–84%        |
 
-## 5. Security & Privacy (Non-Negotiable)
-- Client-side encryption before any upload (key never leaves browser)
-- Per-client isolated Supabase schemas + Row Level Security
-- Zero human/company access to raw client data (even we cannot read it)
-- Zero cross-client contamination (raw data never shared)
-- Only anonymized patterns go to global improvement store
-- Full audit trail for every knowledge access
-- Client can disable anonymized learning anytime
+- Overage: $0.99 per extra unit
+- Freemium: 40 units/month (watermarked) — high-conversion, low-cost lead magnet
+- Goal: 82–87% blended gross margin across the portfolio
+- Churn target: <8% monthly in year 1 (modularity + Knowledge Center + visible ROI makes it almost impossible)
 
-## 6. Ethics & Guardrails
-- Always truth-seeking and data-verifiable
-- Never hallucinate
-- Never give regulated advice (legal, medical, financial, tax, etc.)
-- QA & Reviewer Layer mandatory on every output
-- Strict business-only focus
+## 6. Autonomous Company Layer (The Machine That Builds & Runs AIpods)
+The entire business runs 24/7 with **exactly 7 agents**:
 
-## 7. Autonomous Company Layer (The Machine That Runs AIpods)
-Runs 24/7 with **exactly 7 agents**:
-1. AI CEO (strategy & decisions)
-2. Pod Factory Director (builds, tests, iterates new pods)
-3. Sales & Outreach Director
-4. Marketing & Content Director (website, SEO, content)
-5. Finance & Ops Director (billing, Stripe, metrics)
-6. Customer Success Director (onboarding, Growth Reports)
-7. QA & Reviewer Layer (hallucination + ethics + privacy checks)
+1. **AI CEO** — strategy, decisions, weekly reports to founder
+2. **Pod Factory Director** — creates, tests, iterates all new pods (MVP sprints)
+3. **Sales & Outreach Director**
+4. **Marketing & Content Director** (website, SEO, content, social)
+5. **Finance & Ops Director** (Stripe, billing, metrics)
+6. **Customer Success Director** (onboarding, Growth Reports, upgrades)
+7. **QA & Reviewer Layer** — mandatory on every output (hallucination, ethics, privacy)
 
-**Permanent Rules for CEO & Pod Factory Director** (must be enforced forever):
+**Permanent Rules for AI CEO & Pod Factory Director** (must be hardcoded):
 - Rule 1: Every pod writes every lesson/outcome to the shared Company Knowledge Center.
-- Rule 2: Never hard-code to one model — always use dynamic router.
+- Rule 2: Never hard-code to one model. Always use the dynamic router. Never become dependent on any single provider.
 - Rule 3: Every new module must be vertical- or outcome-specific. Generic agents forbidden.
 
+Founder's role: 10–20 minutes per week reviewing the Sunday CEO Report + approving big decisions only.
+
+## 7. Dashboards (Astro 5 + Vercel)
+- **Customer Dashboard**: My Pods, Knowledge Center (drag-and-drop), Usage & Billing, Growth Reports, modular upgrades.
+- **Internal Admin Dashboard** (/internal – protected): Live metrics, escalation queue, Pod Factory status, CEO Report, one-click approvals.
+
+Both dashboards run independently of Cursor after deployment.
+
 ## 8. Tech Stack (March 2026)
-- Frontend/Dashboards: Astro 5 + Vercel
+- Frontend: Astro 5 + Vercel (marketing + both dashboards)
 - Auth: Clerk
 - Database: Supabase (RLS + pgvector + storage)
 - Agents: LangGraph + dynamic model router
 - Encryption: Web Crypto API (client-side)
-- Deployment: Vercel (zero-downtime)
+- Orchestration: LangGraph
 
-## 9. Long-Term Moat Strategy (10+ Years)
-- Proprietary Company Knowledge Graph (the real defensibility)
-- Model-agnostic orchestration
-- Vertical outcome data from real clients (anonymized)
-- Autonomous self-improvement flywheel
-- Enterprise-grade privacy & trust layer
+## 9. Long-Term Moat Strategy (10–15+ Years)
+- Proprietary Company Knowledge Graph (the real defensibility — compounds forever)
+- Model-agnostic orchestration (we switch to whatever model wins)
+- Vertical outcome data from real clients (anonymized patterns)
+- Autonomous self-improvement flywheel (Pod Factory Director)
+- Enterprise-grade privacy & trust layer (stronger than frontier labs)
 - Predictable pricing vs token roulette
 - Future marketplace of customer-created modules
 
 ## 10. Non-Negotiable Rules Summary
-Any new feature, pod, or change **must** pass all 7 rules:
-1. Privacy absolute + zero-leakage
+Any new feature, pod, module, or change **must** pass all these rules:
+1. Privacy absolute + zero-leakage (client-side encryption)
 2. Zero cross-client contamination
-3. Modular + addictive upgrades
+3. Modular + addictive upgrades (ROI visible, +25% bonus)
 4. 10-year moat (Knowledge Center + model-agnostic)
-5. Business-only focus
-6. Truth + QA Layer
-7. Autonomous with 7 agents + Astro + Vercel
+5. Business-only focus (no personal, no regulated)
+6. Truth + QA Layer on every output
+7. Autonomous operation with exactly 7 agents + Astro + Vercel
+
+## 11. Inspiration Sources
+- LatAm Scalers Managed Creative Teams model (capacity-based, strategic partnership, compounding knowledge)
+- All conversations in this thread (modularity, privacy, autonomy, addictive upgrades, 80%+ margins, etc.)
 
 ---
 
 **This document is the single source of truth.**  
-All future Cursor prompts, autonomous agents, and code must align 100% with it.
+Cursor, the autonomous agents, and all future code must read and obey it completely. Any contradiction must be resolved in favor of this document.
 
 Last updated: March 2026 (full thread synthesis)
