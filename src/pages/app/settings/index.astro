@@ -1,0 +1,67 @@
+---
+import AppLayout from '../../../layouts/AppLayout.astro';
+---
+
+<AppLayout title="Settings — AIpods">
+  <div class="px-8 py-10">
+    <div class="mb-10">
+      <h1 class="text-2xl font-bold text-white">Settings</h1>
+      <p class="mt-1 text-sm text-zinc-500">Manage your account and preferences.</p>
+    </div>
+
+    <div class="space-y-6">
+      <section class="rounded-2xl border border-white/5 bg-white/[0.02] p-8">
+        <h2 class="mb-1 text-lg font-semibold text-white">Account</h2>
+        <p class="mb-6 text-sm text-zinc-500">Founder-only access. Multi-user auth coming in commercial release.</p>
+
+        <div class="space-y-4">
+          <div class="flex items-center justify-between rounded-lg border border-white/5 bg-white/[0.01] px-5 py-4">
+            <div>
+              <p class="text-sm font-medium text-zinc-300">Role</p>
+              <p class="text-xs text-zinc-600">Founder / Admin</p>
+            </div>
+            <span class="rounded-md bg-blue-500/10 border border-blue-500/20 px-3 py-1 text-xs font-medium text-blue-400">Owner</span>
+          </div>
+
+          <div class="flex items-center justify-between rounded-lg border border-white/5 bg-white/[0.01] px-5 py-4">
+            <div>
+              <p class="text-sm font-medium text-zinc-300">Authentication</p>
+              <p class="text-xs text-zinc-600">Password-based (MVP)</p>
+            </div>
+            <span class="rounded-md bg-zinc-500/10 border border-zinc-500/20 px-3 py-1 text-xs font-medium text-zinc-500">Simple Auth</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="rounded-2xl border border-white/5 bg-white/[0.02] p-8">
+        <h2 class="mb-1 text-lg font-semibold text-white">Privacy</h2>
+        <p class="mb-6 text-sm text-zinc-500">Control how your data is used.</p>
+
+        <div class="flex items-center justify-between rounded-lg border border-white/5 bg-white/[0.01] px-5 py-4">
+          <div>
+            <p class="text-sm font-medium text-zinc-300">Allow anonymized pattern learning</p>
+            <p class="text-xs text-zinc-600">Share aggregated, anonymous insights to improve all pods globally. No raw data is ever shared.</p>
+          </div>
+          <div class="relative inline-flex h-6 w-11 items-center rounded-full bg-blue-600 cursor-not-allowed" title="Coming soon">
+            <span class="inline-block h-4 w-4 translate-x-6 rounded-full bg-white transition"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="rounded-2xl border border-white/5 bg-white/[0.02] p-8">
+        <h2 class="mb-1 text-lg font-semibold text-white">Danger Zone</h2>
+        <p class="mb-6 text-sm text-zinc-500">Irreversible actions.</p>
+
+        <div class="flex items-center justify-between rounded-lg border border-red-500/10 bg-red-500/[0.02] px-5 py-4">
+          <div>
+            <p class="text-sm font-medium text-zinc-300">Delete all data</p>
+            <p class="text-xs text-zinc-600">Remove your Knowledge Center, pod history, and all stored data permanently.</p>
+          </div>
+          <button disabled class="rounded-lg border border-red-500/20 bg-red-500/5 px-4 py-2 text-xs font-medium text-red-400/50 cursor-not-allowed">
+            Not available yet
+          </button>
+        </div>
+      </section>
+    </div>
+  </div>
+</AppLayout>

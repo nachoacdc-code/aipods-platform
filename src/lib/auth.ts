@@ -1,13 +1,25 @@
-/**
- * Checks if Clerk credentials are real (not placeholder/empty).
- * Publishable keys must start with pk_test_ or pk_live_ and be > 20 chars.
- */
-function isValidClerkKey(key: string | undefined): boolean {
-  if (!key || key.length < 20) return false;
-  return key.startsWith('pk_test_') || key.startsWith('pk_live_');
+const COOKIE_NAME = 'aipods_session';
+const SESSION_MAX_AGE = 60 * 60 * 24 * 30; // 30 days
+
+export function verifyPassword(input: string): boolean {
+  const password = import.meta.env.ADMIN_PASSWORD;
+  if (!password || password.length < 8) return false;
+  return input === password;
 }
 
-export const isClerkConfigured =
-  isValidClerkKey(import.meta.env.PUBLIC_CLERK_PUBLISHABLE_KEY) &&
-  !!import.meta.env.CLERK_SECRET_KEY &&
-  import.meta.env.CLERK_SECRET_KEY.length > 20;
+export function createSessionCookie(): string {
+  const token = crypto.randomUUID();
+  return `${COOKIE_NAME}=${token}; Path=/; HttpOnly; SameSite=Lax; Max-Age=${SESSION_MAX_AGE}`;
+}
+
+export function clearSessionCookie(): string {
+  return `${COOKIE_NAME}=; Path=/; HttpOnly; SameSite=Lax; Max-Age=0`;
+}
+
+export function hasSessionCookie(cookieHeader: string | null): boolean {
+  if (!cookieHeader) return false;
+  const match = cookieHeader.match(new RegExp(`${COOKIE_NAME}=([^;]+)`));
+  return !!match && match[1].length > 0;
+}
+
+export { COOKIE_NAME };
