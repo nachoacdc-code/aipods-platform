@@ -1,45 +1,38 @@
 import { createClient, type SupabaseClient } from '@supabase/supabase-js';
 
-function getEnv() {
-  const url = import.meta.env.PUBLIC_SUPABASE_URL as string;
-  const anonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY as string;
+let _client: SupabaseClient | null = null;
+let _serviceClient: SupabaseClient | null = null;
 
-  if (!url || !anonKey) {
-    throw new Error(
-      'Missing Supabase environment variables. Set PUBLIC_SUPABASE_URL and PUBLIC_SUPABASE_ANON_KEY in .env'
-    );
-  }
-
-  return { url, anonKey };
+export function isSupabaseConfigured(): boolean {
+  const url = import.meta.env.PUBLIC_SUPABASE_URL ?? '';
+  const key = import.meta.env.PUBLIC_SUPABASE_ANON_KEY ?? '';
+  return url.startsWith('https://') && key.length > 20;
 }
 
-let _client: SupabaseClient | null = null;
+export function getSupabaseClient(): SupabaseClient {
+  if (_client) return _client;
 
-/** Browser / client-side Supabase client (anon key). Lazily initialized. */
-export function getSupabase(): SupabaseClient {
-  if (!_client) {
-    const { url, anonKey } = getEnv();
-    _client = createClient(url, anonKey, {
-      auth: { persistSession: false },
-    });
+  const url = import.meta.env.PUBLIC_SUPABASE_URL;
+  const key = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
+
+  if (!url || !key) {
+    throw new Error('Supabase credentials not configured. Set PUBLIC_SUPABASE_URL and PUBLIC_SUPABASE_ANON_KEY.');
   }
+
+  _client = createClient(url, key);
   return _client;
 }
 
-/**
- * Server-side Supabase client (creates a new instance per request).
- * Optionally accepts a JWT from Clerk to enforce Row Level Security
- * scoped to the authenticated user.
- */
-export function createServerSupabaseClient(accessToken?: string): SupabaseClient {
-  const { url, anonKey } = getEnv();
+export function getSupabaseServiceClient(): SupabaseClient {
+  if (_serviceClient) return _serviceClient;
 
-  return createClient(url, anonKey, {
-    global: {
-      headers: accessToken
-        ? { Authorization: `Bearer ${accessToken}` }
-        : {},
-    },
-    auth: { persistSession: false },
-  });
+  const url = import.meta.env.PUBLIC_SUPABASE_URL;
+  const key = import.meta.env.SUPABASE_SERVICE_ROLE_KEY;
+
+  if (!url || !key) {
+    throw new Error('Supabase service credentials not configured. Set SUPABASE_SERVICE_ROLE_KEY.');
+  }
+
+  _serviceClient = createClient(url, key);
+  return _serviceClient;
 }

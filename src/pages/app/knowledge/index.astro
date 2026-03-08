@@ -1,43 +1,18 @@
 ---
 import AppLayout from '../../../layouts/AppLayout.astro';
+import KnowledgeCenter from '../../../components/knowledge/KnowledgeCenter';
 ---
 
 <AppLayout title="Knowledge Center — AIpods">
   <div class="px-8 py-10">
     <div class="mb-10">
       <h1 class="text-2xl font-bold text-white">Knowledge Center</h1>
-      <p class="mt-1 text-sm text-zinc-500">Upload documents, notes, and data that your pods use to learn your business.</p>
-    </div>
-
-    <div class="flex flex-col items-center justify-center rounded-2xl border border-dashed border-white/10 bg-white/[0.01] py-24 text-center">
-      <div class="mb-4 flex h-16 w-16 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-3xl">
-        🧠
-      </div>
-      <h2 class="mb-2 text-lg font-semibold text-white">No documents yet</h2>
-      <p class="mb-6 max-w-sm text-sm text-zinc-500">
-        Drag-and-drop files or paste notes here. Everything you upload gets encrypted
-        in your browser and becomes knowledge for your AI pods.
+      <p class="mt-1 text-sm text-zinc-500">
+        Upload documents, notes, and data that your pods use to learn your business.
+        Everything is encrypted in your browser before it reaches our servers.
       </p>
-      <button
-        disabled
-        class="inline-flex h-10 items-center gap-2 rounded-lg bg-blue-600/50 px-5 text-sm font-medium text-white/60 cursor-not-allowed"
-      >
-        Upload Files — Coming in Phase 2
-      </button>
     </div>
 
-    <div class="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
-      {[
-        { label: 'Documents', value: '0', sub: 'uploaded' },
-        { label: 'Knowledge Score', value: '—', sub: 'upload to start' },
-        { label: 'Last Updated', value: '—', sub: 'no activity yet' },
-      ].map(stat => (
-        <div class="rounded-xl border border-white/5 bg-white/[0.02] p-5">
-          <p class="text-2xl font-bold text-white">{stat.value}</p>
-          <p class="mt-1 text-xs font-medium text-zinc-400">{stat.label}</p>
-          <p class="text-xs text-zinc-600">{stat.sub}</p>
-        </div>
-      ))}
-    </div>
+    <KnowledgeCenter client:load />
   </div>
 </AppLayout>
