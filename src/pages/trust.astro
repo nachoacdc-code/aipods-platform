@@ -1,0 +1,160 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Trust & Security — AIpods" description="How AIpods protects your data: client-side encryption, per-client isolation, full audit trails, and zero human access to your information.">
+  <header class="fixed top-0 z-50 w-full border-b border-white/5 bg-[#080a0f]/80 backdrop-blur-md">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+      <a href="/" class="flex items-center gap-2.5">
+        <span class="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-500 text-white text-xs font-bold">AI</span>
+        <span class="text-sm font-semibold tracking-wide text-white">AIpods</span>
+      </a>
+      <div class="hidden items-center gap-8 md:flex">
+        <a href="/#how-it-works" class="text-sm text-zinc-400 transition hover:text-white">How It Works</a>
+        <a href="/#pricing" class="text-sm text-zinc-400 transition hover:text-white">Pricing</a>
+        <a href="/trust" class="text-sm text-white font-medium">Trust</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="/sign-in" class="text-sm text-zinc-400 transition hover:text-white">Sign in</a>
+        <a href="/sign-up" class="rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-blue-500">
+          Start Free
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="bg-[#080a0f] pt-32 pb-24 px-6">
+    <div class="mx-auto max-w-3xl">
+
+      <div class="mb-16 text-center">
+        <p class="mb-3 text-xs font-semibold uppercase tracking-widest text-blue-500">Trust & Security</p>
+        <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl">
+          Your data is yours. Period.
+        </h1>
+        <p class="mt-5 text-lg text-zinc-400 leading-relaxed">
+          We built AIpods so that we physically cannot access your information — even if we wanted to.
+          Here's exactly how it works.
+        </p>
+      </div>
+
+      <div class="space-y-12">
+
+        <section class="rounded-2xl border border-white/5 bg-white/[0.02] p-8">
+          <div class="flex items-start gap-4 mb-5">
+            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-500/10 text-lg">🔑</span>
+            <div>
+              <h2 class="text-xl font-semibold text-white">Client-side encryption</h2>
+              <p class="mt-1 text-sm text-zinc-500">Your key never leaves your browser</p>
+            </div>
+          </div>
+          <div class="space-y-3 text-sm leading-relaxed text-zinc-400">
+            <p>Every file you upload is encrypted <strong class="text-zinc-300">in your browser</strong> before it ever reaches our servers. The encryption key is generated locally and stays on your device.</p>
+            <p>This means AIpods — our team, our systems, our infrastructure — literally cannot read your data. Not "we promise we won't." We <em>can't</em>.</p>
+          </div>
+        </section>
+
+        <section class="rounded-2xl border border-white/5 bg-white/[0.02] p-8">
+          <div class="flex items-start gap-4 mb-5">
+            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-violet-500/10 text-lg">🛡️</span>
+            <div>
+              <h2 class="text-xl font-semibold text-white">Complete client isolation</h2>
+              <p class="mt-1 text-sm text-zinc-500">Your data never mixes with anyone else's</p>
+            </div>
+          </div>
+          <div class="space-y-3 text-sm leading-relaxed text-zinc-400">
+            <p>Every client gets their own fully isolated database with Row Level Security. There is no shared table, no shared schema, no way for one client's AI pods to see another client's data.</p>
+            <p>All data is encrypted at rest (AES-256) and in transit (TLS 1.3).</p>
+          </div>
+        </section>
+
+        <section class="rounded-2xl border border-white/5 bg-white/[0.02] p-8">
+          <div class="flex items-start gap-4 mb-5">
+            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-500/10 text-lg">📋</span>
+            <div>
+              <h2 class="text-xl font-semibold text-white">Full audit trail</h2>
+              <p class="mt-1 text-sm text-zinc-500">Every access logged, exportable anytime</p>
+            </div>
+          </div>
+          <div class="space-y-3 text-sm leading-relaxed text-zinc-400">
+            <p>Every time your Knowledge Center is accessed — by any pod, for any task — it's logged in an immutable audit trail that you can export at any time.</p>
+            <p>You always know exactly what your AI team accessed and when.</p>
+          </div>
+        </section>
+
+        <section class="rounded-2xl border border-white/5 bg-white/[0.02] p-8">
+          <div class="flex items-start gap-4 mb-5">
+            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-amber-500/10 text-lg">⚡</span>
+            <div>
+              <h2 class="text-xl font-semibold text-white">You control pattern learning</h2>
+              <p class="mt-1 text-sm text-zinc-500">Opt out anytime with zero loss of functionality</p>
+            </div>
+          </div>
+          <div class="space-y-3 text-sm leading-relaxed text-zinc-400">
+            <p>AIpods can learn anonymized, aggregated patterns across all clients to make everyone's pods smarter — things like "free-shipping hooks convert 2.8x better for DTC brands."</p>
+            <p>This is completely optional. You can toggle it off from your dashboard at any time, and your pods work exactly the same.</p>
+            <p>Anonymized patterns are stored in a separate, isolated database — never co-located with any client's actual data.</p>
+          </div>
+        </section>
+
+        <section class="rounded-2xl border border-white/5 bg-white/[0.02] p-8">
+          <div class="flex items-start gap-4 mb-5">
+            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-rose-500/10 text-lg">🗑️</span>
+            <div>
+              <h2 class="text-xl font-semibold text-white">Data deletion on demand</h2>
+              <p class="mt-1 text-sm text-zinc-500">GDPR & CCPA compliant, one-click</p>
+            </div>
+          </div>
+          <div class="space-y-3 text-sm leading-relaxed text-zinc-400">
+            <p>Want your data gone? One click. We delete everything — your Knowledge Center, pod history, audit trails, all of it. No retention periods, no hidden backups.</p>
+          </div>
+        </section>
+
+        <section class="rounded-2xl border border-white/5 bg-white/[0.02] p-8">
+          <div class="flex items-start gap-4 mb-5">
+            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-cyan-500/10 text-lg">🔒</span>
+            <div>
+              <h2 class="text-xl font-semibold text-white">Infrastructure security</h2>
+              <p class="mt-1 text-sm text-zinc-500">Multiple layers of defense, continuously tested</p>
+            </div>
+          </div>
+          <div class="space-y-3 text-sm leading-relaxed text-zinc-400">
+            <ul class="space-y-2">
+              <li class="flex items-start gap-2"><span class="text-blue-400 mt-0.5">•</span> Web Application Firewall (WAF) on every request</li>
+              <li class="flex items-start gap-2"><span class="text-blue-400 mt-0.5">•</span> Automatic prompt injection detection — malicious inputs are rejected before reaching your pods</li>
+              <li class="flex items-start gap-2"><span class="text-blue-400 mt-0.5">•</span> Daily automated security testing</li>
+              <li class="flex items-start gap-2"><span class="text-blue-400 mt-0.5">•</span> Quarterly transparency reports</li>
+            </ul>
+          </div>
+        </section>
+
+      </div>
+
+      <div class="mt-16 text-center">
+        <p class="mb-6 text-zinc-400">Ready to put your AI department to work?</p>
+        <a href="/sign-up"
+          class="inline-flex h-12 items-center justify-center rounded-lg px-10 text-sm font-semibold text-white transition-all hover:scale-105"
+          style="background: linear-gradient(135deg, #2563eb, #7c3aed);">
+          Start Free Now
+        </a>
+        <p class="mt-4 text-xs text-zinc-600">Free plan · 40 AI Task Units/mo · No credit card required</p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="border-t border-white/5 bg-[#080a0f] px-6 py-10">
+    <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 sm:flex-row">
+      <div class="flex items-center gap-2.5">
+        <span class="flex h-6 w-6 items-center justify-center rounded-md bg-blue-500 text-white text-[10px] font-bold">AI</span>
+        <span class="text-sm font-semibold text-white">AIpods</span>
+      </div>
+      <p class="text-xs text-zinc-600">© 2026 AIpods</p>
+      <div class="flex gap-5">
+        <a href="/sign-in" class="text-xs text-zinc-600 hover:text-zinc-400 transition">Sign in</a>
+        <a href="/sign-up" class="text-xs text-zinc-600 hover:text-zinc-400 transition">Sign up</a>
+        <a href="/#pricing" class="text-xs text-zinc-600 hover:text-zinc-400 transition">Pricing</a>
+        <a href="/trust" class="text-xs text-zinc-600 hover:text-zinc-400 transition">Trust & Security</a>
+      </div>
+    </div>
+  </footer>
+</Layout>
