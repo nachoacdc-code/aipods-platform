@@ -1,0 +1,58 @@
+---
+import AppLayout from '../../layouts/AppLayout.astro';
+
+const session = Astro.locals.auth();
+const userId = session.userId;
+---
+
+<AppLayout title="My Pods — AI Pods">
+  <div class="px-8 py-10">
+    <!-- Header -->
+    <div class="mb-10 flex items-center justify-between">
+      <div>
+        <h1 class="text-2xl font-bold text-white">My Pods</h1>
+        <p class="mt-1 text-sm text-zinc-500">Your active AI agent teams</p>
+      </div>
+      <a
+        href="/app/pods/new"
+        class="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-blue-500"
+      >
+        <span>+</span> New Pod
+      </a>
+    </div>
+
+    <!-- Empty state -->
+    <div class="flex flex-col items-center justify-center rounded-2xl border border-dashed border-white/10 bg-white/[0.01] py-24 text-center">
+      <div class="mb-4 flex h-16 w-16 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-3xl">
+        ⬡
+      </div>
+      <h2 class="mb-2 text-lg font-semibold text-white">No pods yet</h2>
+      <p class="mb-6 max-w-xs text-sm text-zinc-500">
+        Deploy your first AI pod and start uploading company knowledge.
+        Your team gets smarter with every task.
+      </p>
+      <a
+        href="/app/pods/new"
+        class="inline-flex h-10 items-center gap-2 rounded-lg bg-blue-600 px-5 text-sm font-medium text-white transition hover:bg-blue-500"
+      >
+        Deploy your first Pod →
+      </a>
+    </div>
+
+    <!-- Quick stats -->
+    <div class="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
+      {[
+        { label: 'Units Used',       value: '0',   sub: 'of 40 free' },
+        { label: 'Active Pods',      value: '0',   sub: 'deploy one now' },
+        { label: 'Knowledge Score',  value: '—',   sub: 'upload docs to start' },
+        { label: 'Tasks Completed',  value: '0',   sub: 'this month' },
+      ].map(stat => (
+        <div class="rounded-xl border border-white/5 bg-white/[0.02] p-5">
+          <p class="text-2xl font-bold text-white">{stat.value}</p>
+          <p class="mt-1 text-xs font-medium text-zinc-400">{stat.label}</p>
+          <p class="text-xs text-zinc-600">{stat.sub}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</AppLayout>

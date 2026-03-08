@@ -1,0 +1,282 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="AI Pods — Your Autonomous Teams">
+  <!-- ─── Nav ─────────────────────────────────────────────── -->
+  <header class="fixed top-0 z-50 w-full border-b border-white/5 bg-[#080a0f]/80 backdrop-blur-md">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+      <a href="/" class="flex items-center gap-2.5">
+        <span class="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-500 text-white text-xs font-bold">AI</span>
+        <span class="text-sm font-semibold tracking-wide text-white">AI Pods</span>
+      </a>
+      <div class="hidden items-center gap-8 md:flex">
+        <a href="#features" class="text-sm text-zinc-400 transition hover:text-white">Features</a>
+        <a href="#pricing" class="text-sm text-zinc-400 transition hover:text-white">Pricing</a>
+        <a href="#security" class="text-sm text-zinc-400 transition hover:text-white">Security</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="/sign-in" class="text-sm text-zinc-400 transition hover:text-white">Sign in</a>
+        <a href="/sign-up" class="rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-blue-500">
+          Start Free
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ─── Hero ──────────────────────────────────────────── -->
+    <section class="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#080a0f] px-6 pt-24 pb-32">
+      <!-- Grid background -->
+      <div class="pointer-events-none absolute inset-0"
+        style="background-image: linear-gradient(rgba(59,130,246,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.04) 1px, transparent 1px); background-size: 64px 64px;">
+      </div>
+      <!-- Radial glow -->
+      <div class="pointer-events-none absolute left-1/2 top-1/2 h-[900px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full"
+        style="background: radial-gradient(ellipse at center, rgba(59,130,246,0.12) 0%, transparent 65%);">
+      </div>
+
+      <div class="relative z-10 mx-auto max-w-5xl text-center">
+        <!-- Status pill -->
+        <div class="mb-8 inline-flex items-center gap-2 rounded-full border border-blue-500/20 bg-blue-500/5 px-4 py-1.5">
+          <span class="h-1.5 w-1.5 rounded-full bg-blue-400 animate-pulse"></span>
+          <span class="text-xs font-medium tracking-widest text-blue-400 uppercase">Now in Early Access</span>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="mb-6 font-bold tracking-tight text-white" style="font-size: clamp(2.5rem, 7vw, 5.5rem); line-height: 1.08; letter-spacing: -0.03em;">
+          AI Pods —<br />
+          <span style="background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #f472b6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+            Your Autonomous Teams
+          </span>
+        </h1>
+
+        <!-- Subheading -->
+        <p class="mx-auto mb-12 max-w-2xl text-lg leading-relaxed text-zinc-400">
+          Upload your documents once. Get an entire AI department that never forgets,
+          never sleeps, and keeps getting smarter — with zero data leakage and full privacy.
+        </p>
+
+        <!-- CTAs -->
+        <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+          <a href="/sign-up"
+            class="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-lg px-8 text-sm font-semibold text-white transition-all"
+            style="background: linear-gradient(135deg, #2563eb, #7c3aed);">
+            <span class="relative z-10">Start Free — 40 Units/mo</span>
+            <div class="absolute inset-0 opacity-0 transition group-hover:opacity-100"
+              style="background: linear-gradient(135deg, #3b82f6, #8b5cf6);"></div>
+          </a>
+          <a href="#features"
+            class="inline-flex h-12 items-center justify-center rounded-lg border border-white/10 bg-white/5 px-8 text-sm font-medium text-zinc-300 backdrop-blur transition hover:border-white/20 hover:bg-white/10 hover:text-white">
+            See How It Works
+          </a>
+        </div>
+
+        <!-- Social proof -->
+        <p class="mt-8 text-xs text-zinc-600">
+          Client-side encryption · Zero cross-client data · Model-agnostic · 82–87% gross margin
+        </p>
+
+        <!-- Floating pod cards -->
+        <div class="mx-auto mt-20 grid max-w-4xl grid-cols-2 gap-4 sm:grid-cols-4">
+          {[
+            { label: 'Marketing Pod', icon: '📣', color: 'from-blue-500/10 to-blue-600/5', border: 'border-blue-500/20' },
+            { label: 'Sales Pod',     icon: '💼', color: 'from-violet-500/10 to-violet-600/5', border: 'border-violet-500/20' },
+            { label: 'Ops Pod',       icon: '⚙️',  color: 'from-emerald-500/10 to-emerald-600/5', border: 'border-emerald-500/20' },
+            { label: 'Finance Pod',   icon: '📊', color: 'from-amber-500/10 to-amber-600/5', border: 'border-amber-500/20' },
+          ].map(pod => (
+            <div class={`rounded-xl border ${pod.border} bg-gradient-to-b ${pod.color} p-4 text-center backdrop-blur`}>
+              <div class="mb-2 text-2xl">{pod.icon}</div>
+              <p class="text-xs font-medium text-zinc-300">{pod.label}</p>
+              <p class="mt-1 text-[10px] text-zinc-600">3–15 agents</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Features ──────────────────────────────────────── -->
+    <section id="features" class="bg-[#080a0f] px-6 py-32">
+      <div class="mx-auto max-w-6xl">
+        <div class="mb-16 text-center">
+          <p class="mb-3 text-xs font-semibold uppercase tracking-widest text-blue-500">How It Works</p>
+          <h2 class="text-4xl font-bold tracking-tight text-white">One upload. Infinite AI workforce.</h2>
+          <p class="mt-4 text-zinc-400">The Company Knowledge Center is your 10-year moat — every pod learns from it, writes back to it.</p>
+        </div>
+
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+          {[
+            {
+              step: '01',
+              title: 'Upload Once',
+              desc: 'Drag-and-drop your docs, SOPs, brand guidelines. Client-side encrypted — the key never leaves your browser.',
+              icon: '🔒',
+            },
+            {
+              step: '02',
+              title: 'Deploy a Pod',
+              desc: 'Pick a pod (Marketing, Sales, Ops, Finance…). 3–15 specialized agents spin up, pre-loaded with your knowledge.',
+              icon: '🚀',
+            },
+            {
+              step: '03',
+              title: 'It Gets Smarter',
+              desc: 'Every task writes lessons back to your Knowledge Center. Your AI team compounds in value every single day.',
+              icon: '🧠',
+            },
+          ].map(f => (
+            <div class="group rounded-2xl border border-white/5 bg-white/[0.02] p-8 transition hover:border-blue-500/30 hover:bg-blue-500/5">
+              <div class="mb-5 flex items-center gap-3">
+                <span class="text-2xl">{f.icon}</span>
+                <span class="text-xs font-mono text-blue-500">{f.step}</span>
+              </div>
+              <h3 class="mb-3 text-lg font-semibold text-white">{f.title}</h3>
+              <p class="text-sm leading-relaxed text-zinc-400">{f.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <!-- Stats row -->
+        <div class="mt-16 grid grid-cols-2 gap-6 border-t border-white/5 pt-16 sm:grid-cols-4">
+          {[
+            { value: '1/10th', label: 'the cost of a human team' },
+            { value: '24/7',   label: 'autonomous operation' },
+            { value: '∞',      label: 'knowledge retention' },
+            { value: '82–87%', label: 'blended gross margin' },
+          ].map(s => (
+            <div class="text-center">
+              <p class="text-3xl font-bold text-white">{s.value}</p>
+              <p class="mt-1 text-xs text-zinc-500">{s.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Security ──────────────────────────────────────── -->
+    <section id="security" class="relative overflow-hidden bg-[#060810] px-6 py-32">
+      <div class="pointer-events-none absolute right-0 top-0 h-[600px] w-[600px] rounded-full opacity-30"
+        style="background: radial-gradient(circle at top right, rgba(139,92,246,0.15), transparent 65%);">
+      </div>
+      <div class="relative mx-auto max-w-6xl">
+        <div class="grid items-center gap-16 lg:grid-cols-2">
+          <div>
+            <p class="mb-3 text-xs font-semibold uppercase tracking-widest text-violet-400">Non-Negotiable</p>
+            <h2 class="mb-6 text-4xl font-bold tracking-tight text-white">Security is the product, not a feature.</h2>
+            <p class="mb-8 text-zinc-400 leading-relaxed">
+              We can't read your data — even if we wanted to. Your encryption key never leaves your browser.
+              Every client is a fully isolated Supabase schema with Row Level Security.
+            </p>
+            <a href="/sign-up"
+              class="inline-flex h-11 items-center gap-2 rounded-lg border border-violet-500/30 bg-violet-500/10 px-6 text-sm font-medium text-violet-300 transition hover:bg-violet-500/20">
+              Start building securely →
+            </a>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            {[
+              { label: 'Client-side encryption', sub: 'Key never leaves your browser', icon: '🔑' },
+              { label: 'Zero cross-client data', sub: 'Fully isolated per client', icon: '🛡️' },
+              { label: 'Full audit trail', sub: 'Every knowledge access logged', icon: '📋' },
+              { label: 'Opt-out learning', sub: 'Disable anonymized patterns anytime', icon: '⚡' },
+            ].map(item => (
+              <div class="rounded-xl border border-white/5 bg-white/[0.02] p-5">
+                <div class="mb-3 text-xl">{item.icon}</div>
+                <p class="text-sm font-medium text-white">{item.label}</p>
+                <p class="mt-1 text-xs text-zinc-500">{item.sub}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Pricing ───────────────────────────────────────── -->
+    <section id="pricing" class="bg-[#080a0f] px-6 py-32">
+      <div class="mx-auto max-w-6xl">
+        <div class="mb-16 text-center">
+          <p class="mb-3 text-xs font-semibold uppercase tracking-widest text-blue-500">Pricing</p>
+          <h2 class="text-4xl font-bold tracking-tight text-white">Simple, predictable pricing.</h2>
+          <p class="mt-4 text-zinc-400">No token roulette. One flat monthly fee, unlimited team members.</p>
+        </div>
+
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            { name: 'Starter',    price: '$69',    units: '180',    per: '$0.38/unit', highlight: false, badge: '' },
+            { name: 'Growth',     price: '$199',   units: '650',    per: '$0.31/unit', highlight: false, badge: '' },
+            { name: 'Scale',      price: '$499',   units: '2,200',  per: '$0.23/unit', highlight: true,  badge: 'Most Popular' },
+            { name: 'Enterprise', price: '$1,499+',units: '8,000+', per: 'Negotiated', highlight: false, badge: '' },
+          ].map(tier => (
+            <div class={`relative flex flex-col rounded-2xl border p-7 transition ${
+              tier.highlight
+                ? 'border-blue-500/40 bg-gradient-to-b from-blue-500/10 to-transparent'
+                : 'border-white/5 bg-white/[0.02] hover:border-white/10'
+            }`}>
+              {tier.badge && (
+                <span class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-blue-600 px-3 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-white">
+                  {tier.badge}
+                </span>
+              )}
+              <p class="mb-1 text-sm font-medium text-zinc-400">{tier.name}</p>
+              <p class="mb-1 text-4xl font-bold text-white">{tier.price}</p>
+              <p class="mb-6 text-xs text-zinc-500">per month · annual –20%</p>
+              <div class="mb-6 space-y-2 border-t border-white/5 pt-6 text-sm text-zinc-300">
+                <p><span class="font-semibold text-white">{tier.units}</span> AI Task Units</p>
+                <p class="text-xs text-zinc-500">{tier.per}</p>
+                <p class="text-xs text-zinc-500">30% unit rollover</p>
+                <p class="text-xs text-zinc-500">$0.99 overage/unit</p>
+              </div>
+              <a href="/sign-up"
+                class={`mt-auto block rounded-lg py-2.5 text-center text-sm font-medium transition ${
+                  tier.highlight
+                    ? 'bg-blue-600 text-white hover:bg-blue-500'
+                    : 'border border-white/10 text-zinc-300 hover:border-white/20 hover:text-white'
+                }`}>
+                Get Started
+              </a>
+            </div>
+          ))}
+        </div>
+
+        <p class="mt-8 text-center text-sm text-zinc-600">
+          +25% bonus units on any upgrade (first month) · Annual billing saves 20%
+        </p>
+      </div>
+    </section>
+
+    <!-- ─── CTA Banner ─────────────────────────────────────── -->
+    <section class="bg-[#060810] px-6 py-24">
+      <div class="mx-auto max-w-3xl text-center">
+        <h2 class="mb-4 text-4xl font-bold tracking-tight text-white">
+          Your AI department starts today.
+        </h2>
+        <p class="mb-10 text-zinc-400">
+          Free plan includes 40 AI Task Units per month. No credit card required.
+        </p>
+        <a href="/sign-up"
+          class="inline-flex h-12 items-center justify-center rounded-lg px-10 text-sm font-semibold text-white transition-all hover:scale-105"
+          style="background: linear-gradient(135deg, #2563eb, #7c3aed);">
+          Start Free Now →
+        </a>
+      </div>
+    </section>
+
+    <!-- ─── Footer ────────────────────────────────────────── -->
+    <footer class="border-t border-white/5 bg-[#080a0f] px-6 py-10">
+      <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 sm:flex-row">
+        <div class="flex items-center gap-2.5">
+          <span class="flex h-6 w-6 items-center justify-center rounded-md bg-blue-500 text-white text-[10px] font-bold">AI</span>
+          <span class="text-sm font-semibold text-white">AI Pods</span>
+        </div>
+        <p class="text-xs text-zinc-600">
+          © 2026 AI Pods · B2B only · Business use cases exclusively
+        </p>
+        <div class="flex gap-5">
+          <a href="/sign-in"  class="text-xs text-zinc-600 hover:text-zinc-400 transition">Sign in</a>
+          <a href="/sign-up"  class="text-xs text-zinc-600 hover:text-zinc-400 transition">Sign up</a>
+          <a href="#pricing"  class="text-xs text-zinc-600 hover:text-zinc-400 transition">Pricing</a>
+          <a href="#security" class="text-xs text-zinc-600 hover:text-zinc-400 transition">Security</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+</Layout>
