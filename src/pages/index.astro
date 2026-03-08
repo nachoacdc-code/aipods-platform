@@ -65,7 +65,10 @@ import Layout from '../layouts/Layout.astro';
           </a>
         </div>
 
-        <p class="mt-8 text-xs text-zinc-600">
+        <p class="mt-6 text-sm text-zinc-500">
+          1 unit = ~1 hour of expert-level output, delivered in minutes.
+        </p>
+        <p class="mt-3 text-xs text-zinc-600">
           Works 24/7 · Gets smarter every month · 1/10th the cost of a human team
         </p>
 
@@ -186,6 +189,34 @@ import Layout from '../layouts/Layout.astro';
               </a>
             </div>
           ))}
+        </div>
+
+        <div class="mt-14 rounded-2xl border border-white/5 bg-white/[0.02] p-8 sm:p-10">
+          <h3 class="mb-2 text-center text-lg font-semibold text-white">What can you do with 1 AI Task Unit?</h3>
+          <p class="mb-8 text-center text-sm text-zinc-500">Each unit delivers roughly 1 hour of expert-level output — in minutes, not hours.</p>
+
+          <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              { icon: '💼', task: 'Research a prospect & write a personalized outreach email' },
+              { icon: '📝', task: 'Write a full SEO blog post (1,200+ words), publish-ready' },
+              { icon: '📅', task: 'Create a week\'s social media calendar with copy & hashtags' },
+              { icon: '📊', task: 'Competitive analysis of 5 companies — side-by-side breakdown' },
+              { icon: '📄', task: 'Summarize a 60-page document into an executive brief' },
+              { icon: '🎯', task: 'Produce 10 ad copy variations for A/B testing' },
+            ].map(item => (
+              <div class="flex items-start gap-3 rounded-lg border border-white/5 bg-white/[0.01] px-4 py-3">
+                <span class="mt-0.5 text-base shrink-0">{item.icon}</span>
+                <p class="text-sm text-zinc-300">{item.task}</p>
+              </div>
+            ))}
+          </div>
+
+          <div class="mt-8 flex flex-col items-center gap-2 border-t border-white/5 pt-6">
+            <p class="text-sm text-zinc-400">
+              Bigger projects? A full brand strategy = 4–6 units · Sales playbook = 4–6 units · Full website copy = 5–8 units
+            </p>
+            <p class="text-xs text-zinc-600">You always see the exact unit cost before a task runs — no surprises.</p>
+          </div>
         </div>
 
         <p class="mt-8 text-center text-sm text-zinc-600">

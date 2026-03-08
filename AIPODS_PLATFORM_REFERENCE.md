@@ -186,7 +186,43 @@ The QA & Reviewer Layer has a permanent Ethical Guardrail Module (hardcoded, non
 
 ## 8. Business Model & Pricing
 
-**Subscription-only** with AI Task Units (1 unit ≈ value of 1 skilled human hour, delivered in minutes).
+**Subscription-only** with AI Task Units.
+
+### What Is an AI Task Unit?
+
+One AI Task Unit delivers roughly the same output a skilled human professional would produce in **one hour** — but completed in **minutes, not hours**. The unit is pegged to output value, not compute time.
+
+#### 1-Unit Tasks (≈ 1 skilled human hour of output)
+
+| Pod | Example Task | What You Get |
+|-----|-------------|--------------|
+| Sales | Research a prospect company and write a personalized outreach email | Company brief + tailored 3-paragraph email ready to send |
+| Sales | Qualify a batch of 20 inbound leads against your ICP | Scored & ranked lead list with next-step recommendations |
+| Marketing | Write a long-form blog post (1,200–1,500 words), SEO-optimized | Publish-ready article with meta title, description, and headers |
+| Marketing | Create a full social media content calendar for 1 week | 5–7 posts with copy, hashtags, and suggested visuals per platform |
+| Creative | Design a landing page wireframe + write all copy | Full page structure with headlines, CTAs, and section copy |
+| Creative | Produce 10 ad copy variations for A/B testing | 10 unique variations with hooks, body text, and CTAs |
+| Ops | Summarize a 60-page document into an executive brief | 1–2 page structured summary with key takeaways and action items |
+| Ops | Build a standard operating procedure from rough notes | Formatted SOP with steps, owners, and edge-case notes |
+| Research | Competitive analysis of 5 companies in your space | Side-by-side comparison with strengths, weaknesses, pricing, positioning |
+| Research | Market sizing for a new product or geography | TAM/SAM/SOM breakdown with sources and assumptions |
+
+#### Multi-Unit Tasks (complex projects, cost shown before running)
+
+| Task | Typical Units | What You Get |
+|------|--------------|--------------|
+| Full brand strategy brief | 4–6 | Positioning, messaging framework, tone guide, audience personas |
+| End-to-end email nurture sequence (8–12 emails) | 3–5 | Full sequence with copy, subject lines, send timing, segmentation logic |
+| Full website copywriting (5–8 pages) | 5–8 | All page copy, CTAs, meta descriptions, internal linking suggestions |
+| Sales playbook for a new product launch | 4–6 | Objection handling, talk tracks, competitive battle cards, email templates |
+| Comprehensive market entry report | 8–15 | Full research report with market data, competitor mapping, go-to-market recommendations |
+
+#### Key Principles
+
+- **You always see the unit cost before a task runs** — no surprises.
+- **Simple tasks = 1 unit.** Complex, multi-step projects cost more but are clearly quoted upfront.
+- **The comparison:** 1 unit = ~$0.23–$0.38 (depending on plan) vs. $50–$150/hr for a human freelancer doing the same work.
+- **Units measure value delivered, not tokens or API calls.** You pay for results, not infrastructure.
 
 ### Client-Facing Pricing
 
