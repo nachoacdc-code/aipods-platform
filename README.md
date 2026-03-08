@@ -1,43 +1,27 @@
-# Astro Starter Kit: Minimal
+# AIpods Platform
 
-```sh
-npm create astro@latest -- --template minimal
-```
+B2B SaaS platform delivering fully autonomous AI agent teams ("pods") that function as complete, self-running departments for companies.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+See `AIPODS_PLATFORM_REFERENCE.md` for the full product reference.
 
-## 🚀 Project Structure
+## Tech Stack
 
-Inside of your Astro project, you'll see the following folders and files:
+- **Frontend**: Astro 5 + React + Tailwind CSS + shadcn/ui
+- **Deployment**: Vercel (SSR)
+- **Auth**: Clerk (deferred for MVP — simple password auth)
+- **Database**: Supabase (PostgreSQL + pgvector)
+- **Agent Orchestration**: LangGraph + dynamic model router
+- **Encryption**: Web Crypto API (client-side)
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## Commands
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+| Command         | Action                                 |
+|:----------------|:---------------------------------------|
+| `npm install`   | Install dependencies                   |
+| `npm run dev`   | Start dev server at `localhost:4321`   |
+| `npm run build` | Build for production                   |
+| `npm run check` | Run Astro type checker                 |
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Environment Variables
 
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Copy `.env.example` to `.env` and fill in your values. See the example file for all required variables.
