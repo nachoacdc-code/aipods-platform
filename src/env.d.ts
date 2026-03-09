@@ -11,6 +11,7 @@ interface ImportMetaEnv {
   readonly ANTHROPIC_API_KEY: string;
   readonly XAI_API_KEY: string;
   readonly GOOGLE_AI_API_KEY: string;
+  readonly CRON_SECRET: string;
 }
 
 interface ImportMeta {
