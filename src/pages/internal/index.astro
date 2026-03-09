@@ -1,0 +1,14 @@
+---
+import InternalLayout from '../../layouts/InternalLayout.astro';
+import InternalOverview from '../../components/internal/InternalOverview';
+---
+
+<InternalLayout title="Internal Overview — AIpods">
+  <div class="px-8 py-10">
+    <div class="mb-10">
+      <h1 class="text-2xl font-bold text-white">Internal Overview</h1>
+      <p class="mt-1 text-sm text-zinc-500">The autonomous company at a glance</p>
+    </div>
+    <InternalOverview client:load />
+  </div>
+</InternalLayout>

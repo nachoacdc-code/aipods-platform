@@ -4,7 +4,7 @@ import { hasSessionCookie } from './lib/auth';
 export const onRequest = defineMiddleware((context, next) => {
   const { pathname } = context.url;
 
-  const isProtected = pathname.startsWith('/app');
+  const isProtected = pathname.startsWith('/app') || pathname.startsWith('/internal');
 
   if (isProtected) {
     const cookieHeader = context.request.headers.get('cookie');
