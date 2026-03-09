@@ -1,0 +1,18 @@
+---
+import AppLayout from '../../../layouts/AppLayout.astro';
+import PodDetail from '../../../components/pods/PodDetail';
+
+const podId = Astro.params.id ?? '';
+---
+
+<AppLayout title="Pod Detail — AIpods">
+  <div class="px-8 py-10">
+    <div class="mb-6">
+      <a href="/app" class="inline-flex items-center gap-1 text-xs text-zinc-600 transition hover:text-zinc-400">
+        ← Back to My Pods
+      </a>
+    </div>
+
+    <PodDetail client:load podId={podId} />
+  </div>
+</AppLayout>

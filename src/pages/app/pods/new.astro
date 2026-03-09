@@ -1,0 +1,18 @@
+---
+import AppLayout from '../../../layouts/AppLayout.astro';
+import PodCreator from '../../../components/pods/PodCreator';
+---
+
+<AppLayout title="Deploy a New Pod — AIpods">
+  <div class="px-8 py-10">
+    <div class="mb-10">
+      <a href="/app" class="mb-4 inline-flex items-center gap-1 text-xs text-zinc-600 transition hover:text-zinc-400">
+        ← Back to My Pods
+      </a>
+      <h1 class="text-2xl font-bold text-white">Deploy a New Pod</h1>
+      <p class="mt-1 text-sm text-zinc-500">Choose a pod type and give it a name. Your new AI team will be ready in seconds.</p>
+    </div>
+
+    <PodCreator client:load />
+  </div>
+</AppLayout>
